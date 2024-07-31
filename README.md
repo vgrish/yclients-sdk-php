@@ -216,7 +216,7 @@ $generator = $yc->query()
          }
          return $builder->get();
     });
-    foreach ($generator as $client) {
-        $clients[] = $client;
-    }
+foreach ($generator as $client) {
+    $clients[] = $client;
+}
 ```
