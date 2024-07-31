@@ -1,0 +1,43 @@
+{
+  "name": "vgrish/yclients-sdk-php",
+  "type": "library",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "",
+  "authors": [
+    {
+      "name": "Vgrish",
+      "email": "vgrish@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Vgrish\\Yclients\\": "src/"
+    }
+  },
+  "config": {
+    "platform": {
+      "php": "8.1"
+    },
+    "allow-plugins": {
+      "php-http/discovery": true
+    }
+  },
+  "require": {
+    "php": ">=8.1",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "vgrish/yclients-openapi-php": "^1.0"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.10",
+    "jetbrains/phpstorm-attributes": "1.1",
+    "friendsofphp/php-cs-fixer": "^3.5",
+    "ergebnis/php-cs-fixer-config": "^6.33.0"
+  },
+  "scripts": {
+    "coding-standards": [
+      "php-cs-fixer fix --diff --show-progress=dots --verbose"
+    ]
+  }
+}
