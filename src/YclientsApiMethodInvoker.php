@@ -121,8 +121,6 @@ final class YclientsApiMethodInvoker
             \array_filter($builderPaths, static fn ($value) => null !== $value && '' !== $value),
         );
 
-        // var_export($values);
-
         $requireRequestFields = $this->getRequireRequestFields();
 
         foreach ($this->reflection->getParameters() as $parameter) {
@@ -135,11 +133,6 @@ final class YclientsApiMethodInvoker
             $name = $parameter->getName();
             $spec = $this->getSpec($name);
             $getter = $this->convertParameterNameToGetterName($name);
-
-            //            var_export($name);
-            //            echo "\n";
-            //            var_export($getter);
-            //            echo "\n";
 
             if (\method_exists($this, $getter)) {
                 $value = $this->{$getter}($spec);
@@ -166,10 +159,6 @@ final class YclientsApiMethodInvoker
                 $args[$name] = $value;
             }
         }
-
-        // var_export($this->entity);echo "\n";
-        // var_export($args);
-        // echo "\n";//die;
 
         if ($this->reflection->getNumberOfRequiredParameters() > \count($args)) {
             throw new \Exception("Too few arguments to call {$this->class} {$this->method}");
