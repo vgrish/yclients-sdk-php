@@ -3,7 +3,13 @@
   "type": "library",
   "license": "MIT",
   "version": "1.0.0",
-  "description": "",
+  "description": "yclients-sdk-php package for YCLIENTS",
+  "keywords": [
+    "yclients",
+    "openapi",
+    "rest",
+    "api"
+  ],
   "authors": [
     {
       "name": "Vgrish",
