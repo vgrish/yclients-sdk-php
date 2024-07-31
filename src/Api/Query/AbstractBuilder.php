@@ -84,9 +84,7 @@ abstract class AbstractBuilder
 
         if ($state->success()) {
             $data = Formatter::extractData($state->getData());
-            $meta = Formatter::extractData($state->getMeta());
-
-            //  var_export($state);die;
+            // $meta = Formatter::extractData($state->getMeta());
 
             $pk = $this->paths();
 
@@ -98,7 +96,6 @@ abstract class AbstractBuilder
                 }
 
                 $data = $rows;
-                // $data = ['rows' => $rows];
             } else {
                 $data = (!empty($pk)) ? \array_merge($pk, $data) : $data;
             }
