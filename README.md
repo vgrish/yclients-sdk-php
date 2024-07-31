@@ -2,7 +2,7 @@
 
 # SDK для работы с API v1.0 сервиса Yclients
 
-Библиотека, позволяющий работать с [Yclients API](https://developers.yclients.com/ru/) и `PHP 8.1+`.
+Библиотека, позволяющая работать с [Yclients API](https://developers.yclients.com/ru/) и `PHP 8.1+`.
 
 Находится в разработке, версии могут не обладать обратной совместимостью. Список изменений можно найти
 в [Changelog](CHANGELOG.md).
