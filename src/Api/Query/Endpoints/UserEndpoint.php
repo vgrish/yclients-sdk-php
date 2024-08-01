@@ -9,11 +9,11 @@ declare(strict_types=1);
  * @see https://github.com/vgrish/yclients-sdk-php
  */
 
-namespace Vgrish\Yclients\Api\Query\Segments;
+namespace Vgrish\Yclients\Api\Query\Endpoints;
 
-use Vgrish\Yclients\Api\Query\Endpoints\User\UserAuthEndpoint;
+use Vgrish\Yclients\Api\Query\Segments\User\UserAuthSegment;
 
-final class UserSegment extends AbstractSegment
+final class UserEndpoint extends AbstractEndpoint
 {
     /**
      * Входная точка для работы с Авторизацией.
@@ -27,8 +27,8 @@ final class UserSegment extends AbstractSegment
      *
      * @see \Vgrish\YclientsOpenApi\Api\AuthApi::authUser() create
      */
-    public function auth(): UserAuthEndpoint
+    public function auth(): UserAuthSegment
     {
-        return $this->resolveBuilder(UserAuthEndpoint::class);
+        return $this->resolveBuilder(UserAuthSegment::class);
     }
 }

@@ -13,8 +13,8 @@ namespace Vgrish\Yclients\Api\Query;
 
 use Vgrish\Yclients\Api\EntityState;
 use Vgrish\Yclients\Api\ObjectRecord;
-use Vgrish\Yclients\Api\Query\Endpoints\AbstractCollectionEndpoint;
-use Vgrish\Yclients\Api\Query\Segments\AbstractSegment;
+use Vgrish\Yclients\Api\Query\Endpoints\AbstractEndpoint;
+use Vgrish\Yclients\Api\Query\Segments\AbstractCollectionSegment;
 use Vgrish\Yclients\Services\Formatter;
 use Vgrish\Yclients\YclientsApiMethodInvoker;
 
@@ -58,11 +58,11 @@ abstract class AbstractBuilder
     }
 
     /**
-     * @template T of AbstractSegment
+     * @template T of AbstractEndpoint
      *
      * @param class-string<T> $builderClass
      */
-    protected function resolveBuilder(string $builderClass): AbstractSegment
+    protected function resolveBuilder(string $builderClass): AbstractEndpoint
     {
         return new $builderClass($this->record, $this->params);
     }
@@ -88,7 +88,7 @@ abstract class AbstractBuilder
 
             $pk = $this->paths();
 
-            if (\is_a($this, AbstractCollectionEndpoint::class)) {
+            if (\is_a($this, AbstractCollectionSegment::class)) {
                 $rows = [];
 
                 foreach ($data as $row) {

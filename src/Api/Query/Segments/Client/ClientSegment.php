@@ -9,15 +9,15 @@ declare(strict_types=1);
  * @see https://github.com/vgrish/yclients-sdk-php
  */
 
-namespace Vgrish\Yclients\Api\Query\Endpoints\Client;
+namespace Vgrish\Yclients\Api\Query\Segments\Client;
 
-use Vgrish\Yclients\Api\Query\Endpoints\AbstractEntityEndpoint;
+use Vgrish\Yclients\Api\Query\Segments\AbstractEntitySegment;
 use Vgrish\YclientsOpenApi\Api\ClientApi;
 
 /**
  * @method \Vgrish\YclientsOpenApi\Model\ClientResponse object()
  */
-class ClientEndpoint extends AbstractEntityEndpoint
+class ClientSegment extends AbstractEntitySegment
 {
     /**
      * @see \Vgrish\YclientsOpenApi\Api\ClientApi::clientGet() get

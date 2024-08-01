@@ -9,15 +9,15 @@ declare(strict_types=1);
  * @see https://github.com/vgrish/yclients-sdk-php
  */
 
-namespace Vgrish\Yclients\Api\Query\Endpoints\Loyalty;
+namespace Vgrish\Yclients\Api\Query\Segments\Loyalty;
 
-use Vgrish\Yclients\Api\Query\Endpoints\AbstractEntityEndpoint;
+use Vgrish\Yclients\Api\Query\Segments\AbstractEntitySegment;
 use Vgrish\YclientsOpenApi\Api\LoyaltyCardApi;
 
 /**
  * @method \Vgrish\YclientsOpenApi\Model\LoyaltyTransactionResponse object()
  */
-final class LoyaltyTransactionEndpoint extends AbstractEntityEndpoint
+final class LoyaltyTransactionSegment extends AbstractEntitySegment
 {
     /**
      * @param array $request {@see \Vgrish\YclientsOpenApi\Model\LoyaltyTransactionCreateRequest::$openAPITypes}

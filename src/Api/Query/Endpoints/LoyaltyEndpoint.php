@@ -9,14 +9,14 @@ declare(strict_types=1);
  * @see https://github.com/vgrish/yclients-sdk-php
  */
 
-namespace Vgrish\Yclients\Api\Query\Segments;
+namespace Vgrish\Yclients\Api\Query\Endpoints;
 
-use Vgrish\Yclients\Api\Query\Endpoints\Loyalty\LoyaltyCardEndpoint;
-use Vgrish\Yclients\Api\Query\Endpoints\Loyalty\LoyaltyCardsEndpoint;
-use Vgrish\Yclients\Api\Query\Endpoints\Loyalty\LoyaltyTransactionEndpoint;
-use Vgrish\Yclients\Api\Query\Endpoints\Loyalty\LoyaltyTransactionsEndpoint;
+use Vgrish\Yclients\Api\Query\Segments\Loyalty\LoyaltyCardSegment;
+use Vgrish\Yclients\Api\Query\Segments\Loyalty\LoyaltyCardsSegment;
+use Vgrish\Yclients\Api\Query\Segments\Loyalty\LoyaltyTransactionSegment;
+use Vgrish\Yclients\Api\Query\Segments\Loyalty\LoyaltyTransactionsSegment;
 
-final class LoyaltySegment extends AbstractSegment
+final class LoyaltyEndpoint extends AbstractEndpoint
 {
     /**
      * Входная точка для работы с Транзакциями Лояльности.
@@ -30,9 +30,9 @@ final class LoyaltySegment extends AbstractSegment
      *
      * @see \Vgrish\YclientsOpenApi\Api\LoyaltyTransactionApi::loyaltyTransactionGetList() get
      */
-    public function transactions(): LoyaltyTransactionsEndpoint
+    public function transactions(): LoyaltyTransactionsSegment
     {
-        return $this->resolveBuilder(LoyaltyTransactionsEndpoint::class);
+        return $this->resolveBuilder(LoyaltyTransactionsSegment::class);
     }
 
     /**
@@ -47,9 +47,9 @@ final class LoyaltySegment extends AbstractSegment
      *
      * @see \Vgrish\YclientsOpenApi\Api\LoyaltyCardApi::loyaltyCardTransactionCreate() create
      */
-    public function transaction(): LoyaltyTransactionEndpoint
+    public function transaction(): LoyaltyTransactionSegment
     {
-        return $this->resolveBuilder(LoyaltyTransactionEndpoint::class);
+        return $this->resolveBuilder(LoyaltyTransactionSegment::class);
     }
 
     /**
@@ -65,9 +65,9 @@ final class LoyaltySegment extends AbstractSegment
      * @see \Vgrish\YclientsOpenApi\Api\LoyaltyCardApi::loyaltyCardCreate() create
      * @see \Vgrish\YclientsOpenApi\Api\LoyaltyCardApi::loyaltyCardRemove() remove
      */
-    public function card(): LoyaltyCardEndpoint
+    public function card(): LoyaltyCardSegment
     {
-        return $this->resolveBuilder(LoyaltyCardEndpoint::class);
+        return $this->resolveBuilder(LoyaltyCardSegment::class);
     }
 
     /**
@@ -83,8 +83,8 @@ final class LoyaltySegment extends AbstractSegment
      * @see \Vgrish\YclientsOpenApi\Api\LoyaltyCardApi::loyaltyCardCreate() create
      * @see \Vgrish\YclientsOpenApi\Api\LoyaltyCardApi::loyaltyCardRemove() remove
      */
-    public function cards(): LoyaltyCardsEndpoint
+    public function cards(): LoyaltyCardsSegment
     {
-        return $this->resolveBuilder(LoyaltyCardsEndpoint::class);
+        return $this->resolveBuilder(LoyaltyCardsSegment::class);
     }
 }

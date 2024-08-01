@@ -9,14 +9,14 @@ declare(strict_types=1);
  * @see https://github.com/vgrish/yclients-sdk-php
  */
 
-namespace Vgrish\Yclients\Api\Query\Endpoints;
+namespace Vgrish\Yclients\Api\Query\Segments;
 
 use Vgrish\Yclients\Api\Query\Traits\Actions\EntityObjectsTrait;
 use Vgrish\Yclients\Api\Query\Traits\Actions\GeneratorTrait;
 use Vgrish\Yclients\Api\Query\Traits\Params\LimitOffsetTrait;
 use Vgrish\Yclients\Api\Query\Traits\Params\ParamTrait;
 
-abstract class AbstractCollectionEndpoint extends AbstractEndpoint
+abstract class AbstractCollectionSegment extends AbstractSegment
 {
     use ParamTrait;
     use LimitOffsetTrait;

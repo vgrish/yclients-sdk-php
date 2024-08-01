@@ -9,10 +9,10 @@ declare(strict_types=1);
  * @see https://github.com/vgrish/yclients-sdk-php
  */
 
-namespace Vgrish\Yclients\Api\Query\Segments;
+namespace Vgrish\Yclients\Api\Query\Endpoints;
 
-use Vgrish\Yclients\Api\Query\Endpoints\Client\ClientEndpoint;
+use Vgrish\Yclients\Api\Query\Segments\Client\ClientsSegment;
 
-final class ClientSegment extends ClientEndpoint
+final class ClientsEndpoint extends ClientsSegment
 {
 }

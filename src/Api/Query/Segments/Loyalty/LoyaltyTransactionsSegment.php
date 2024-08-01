@@ -9,15 +9,15 @@ declare(strict_types=1);
  * @see https://github.com/vgrish/yclients-sdk-php
  */
 
-namespace Vgrish\Yclients\Api\Query\Endpoints\Loyalty;
+namespace Vgrish\Yclients\Api\Query\Segments\Loyalty;
 
-use Vgrish\Yclients\Api\Query\Endpoints\AbstractCollectionEndpoint;
+use Vgrish\Yclients\Api\Query\Segments\AbstractCollectionSegment;
 use Vgrish\YclientsOpenApi\Api\LoyaltyTransactionApi;
 
 /**
  * @method array<\Vgrish\YclientsOpenApi\Model\LoyaltyTransactionResponse> objects()
  */
-final class LoyaltyTransactionsEndpoint extends AbstractCollectionEndpoint
+final class LoyaltyTransactionsSegment extends AbstractCollectionSegment
 {
     /**
      * @param array $request {@see \Vgrish\YclientsOpenApi\Api\LoyaltyTransactionApi::loyaltyTransactionGetList()}

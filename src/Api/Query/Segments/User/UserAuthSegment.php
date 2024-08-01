@@ -9,15 +9,15 @@ declare(strict_types=1);
  * @see https://github.com/vgrish/yclients-sdk-php
  */
 
-namespace Vgrish\Yclients\Api\Query\Endpoints\User;
+namespace Vgrish\Yclients\Api\Query\Segments\User;
 
-use Vgrish\Yclients\Api\Query\Endpoints\AbstractEntityEndpoint;
+use Vgrish\Yclients\Api\Query\Segments\AbstractEntitySegment;
 use Vgrish\YclientsOpenApi\Api\AuthApi;
 
 /**
  * @method \Vgrish\YclientsOpenApi\Model\AuthResponse object()
  */
-final class UserAuthEndpoint extends AbstractEntityEndpoint
+final class UserAuthSegment extends AbstractEntitySegment
 {
     /**
      * @param array $request {@see \Vgrish\YclientsOpenApi\Model\AuthUserRequest::$openAPITypes}

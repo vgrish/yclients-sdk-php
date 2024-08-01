@@ -9,15 +9,15 @@ declare(strict_types=1);
  * @see https://github.com/vgrish/yclients-sdk-php
  */
 
-namespace Vgrish\Yclients\Api\Query\Endpoints\Loyalty;
+namespace Vgrish\Yclients\Api\Query\Segments\Loyalty;
 
-use Vgrish\Yclients\Api\Query\Endpoints\AbstractEntityEndpoint;
+use Vgrish\Yclients\Api\Query\Segments\AbstractEntitySegment;
 use Vgrish\YclientsOpenApi\Api\LoyaltyCardApi;
 
 /**
  * @method \Vgrish\YclientsOpenApi\Model\LoyaltyCardResponse object()
  */
-final class LoyaltyCardEndpoint extends AbstractEntityEndpoint
+final class LoyaltyCardSegment extends AbstractEntitySegment
 {
     /**
      * @param array $request {@see \Vgrish\YclientsOpenApi\Model\LoyaltyCardCreateRequest::$openAPITypes}
@@ -45,8 +45,8 @@ final class LoyaltyCardEndpoint extends AbstractEntityEndpoint
         return $this;
     }
 
-    public function types(): LoyaltyCardTypesEndpoint
+    public function types(): LoyaltyCardTypesSegment
     {
-        return $this->resolveBuilder(LoyaltyCardTypesEndpoint::class);
+        return $this->resolveBuilder(LoyaltyCardTypesSegment::class);
     }
 }

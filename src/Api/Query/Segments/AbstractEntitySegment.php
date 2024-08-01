@@ -11,8 +11,9 @@ declare(strict_types=1);
 
 namespace Vgrish\Yclients\Api\Query\Segments;
 
-use Vgrish\Yclients\Api\Query\Endpoints\Client\ClientsEndpoint;
+use Vgrish\Yclients\Api\Query\Traits\Actions\EntityObjectTrait;
 
-final class ClientsSegment extends ClientsEndpoint
+abstract class AbstractEntitySegment extends AbstractSegment
 {
+    use EntityObjectTrait;
 }

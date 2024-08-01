@@ -9,22 +9,22 @@ declare(strict_types=1);
  * @see https://github.com/vgrish/yclients-sdk-php
  */
 
-namespace Vgrish\Yclients\Api\Query\Endpoints\Loyalty;
+namespace Vgrish\Yclients\Api\Query\Segments\Loyalty;
 
-use Vgrish\Yclients\Api\Query\Endpoints\AbstractCollectionEndpoint;
+use Vgrish\Yclients\Api\Query\Segments\AbstractCollectionSegment;
 use Vgrish\YclientsOpenApi\Api\LoyaltyCardApi;
 
 /**
  * @method array<\Vgrish\YclientsOpenApi\Model\LoyaltyCardTypeResponse> objects()
  */
-final class LoyaltyCardTypesByCompanyIdEndpoint extends AbstractCollectionEndpoint
+final class LoyaltyCardTypesByChainIdSegment extends AbstractCollectionSegment
 {
     /**
-     * @see \Vgrish\YclientsOpenApi\Api\LoyaltyCardApi::loyaltyCardTypeByCompanyIdGetList() get
+     * @see \Vgrish\YclientsOpenApi\Api\LoyaltyCardApi::loyaltyCardTypeByChainIdGetList() get
      */
     public function get(array $request = []): self
     {
-        [$class, $method] = [LoyaltyCardApi::class, 'loyaltyCardTypeByCompanyIdGetList'];
+        [$class, $method] = [LoyaltyCardApi::class, 'loyaltyCardTypeByChainIdGetList'];
 
         $this->invoke($class, $method, $request);
 

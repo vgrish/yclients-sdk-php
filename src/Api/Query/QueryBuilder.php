@@ -11,10 +11,10 @@ declare(strict_types=1);
 
 namespace Vgrish\Yclients\Api\Query;
 
-use Vgrish\Yclients\Api\Query\Segments\ClientSegment;
-use Vgrish\Yclients\Api\Query\Segments\ClientsSegment;
-use Vgrish\Yclients\Api\Query\Segments\LoyaltySegment;
-use Vgrish\Yclients\Api\Query\Segments\UserSegment;
+use Vgrish\Yclients\Api\Query\Endpoints\ClientEndpoint;
+use Vgrish\Yclients\Api\Query\Endpoints\ClientsEndpoint;
+use Vgrish\Yclients\Api\Query\Endpoints\LoyaltyEndpoint;
+use Vgrish\Yclients\Api\Query\Endpoints\UserEndpoint;
 
 final class QueryBuilder extends AbstractBuilder
 {
@@ -37,9 +37,9 @@ final class QueryBuilder extends AbstractBuilder
      *  ->create();
      * </code>
      */
-    public function user(): UserSegment
+    public function user(): UserEndpoint
     {
-        return $this->resolveBuilder(UserSegment::class);
+        return $this->resolveBuilder(UserEndpoint::class);
     }
 
     /**
@@ -51,9 +51,9 @@ final class QueryBuilder extends AbstractBuilder
      * ->get();
      * </code>
      */
-    public function client(): ClientSegment
+    public function client(): ClientEndpoint
     {
-        return $this->resolveBuilder(ClientSegment::class);
+        return $this->resolveBuilder(ClientEndpoint::class);
     }
 
     /**
@@ -65,9 +65,9 @@ final class QueryBuilder extends AbstractBuilder
      * ->get();
      * </code>
      */
-    public function clients(): ClientsSegment
+    public function clients(): ClientsEndpoint
     {
-        return $this->resolveBuilder(ClientsSegment::class);
+        return $this->resolveBuilder(ClientsEndpoint::class);
     }
 
     /**
@@ -80,8 +80,8 @@ final class QueryBuilder extends AbstractBuilder
      * ->get();
      * </code>
      */
-    public function loyalty(): LoyaltySegment
+    public function loyalty(): LoyaltyEndpoint
     {
-        return $this->resolveBuilder(LoyaltySegment::class);
+        return $this->resolveBuilder(LoyaltyEndpoint::class);
     }
 }

@@ -19,6 +19,8 @@ final class Header
         'accept' => 'application/vnd.yclients.v2+json',
         'content_type' => 'application/json',
     ];
+    public const AUTH_BEARER = 'Bearer';
+    public const AUTH_USER = 'User';
 
     public static function get(string $key): string
     {
@@ -30,11 +32,11 @@ final class Header
         $auth = [];
 
         if (\str_contains($spec['desc'], 'partner_token')) {
-            $auth[] = 'Bearer ' . $yclients->getPartnerToken();
+            $auth[] = \sprintf('%s %s', self::AUTH_BEARER, $yclients->getPartnerToken());
         }
 
         if (\str_contains($spec['desc'], 'user_token')) {
-            $auth[] = 'User ' . $yclients->getUserToken();
+            $auth[] = \sprintf('%s %s', self::AUTH_USER, $yclients->getUserToken());
         }
 
         return \implode(',', $auth);

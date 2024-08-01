@@ -9,15 +9,15 @@ declare(strict_types=1);
  * @see https://github.com/vgrish/yclients-sdk-php
  */
 
-namespace Vgrish\Yclients\Api\Query\Endpoints\Client;
+namespace Vgrish\Yclients\Api\Query\Segments\Client;
 
-use Vgrish\Yclients\Api\Query\Endpoints\AbstractCollectionEndpoint;
+use Vgrish\Yclients\Api\Query\Segments\AbstractCollectionSegment;
 use Vgrish\YclientsOpenApi\Api\ClientApi;
 
 /**
  * @method array<\Vgrish\YclientsOpenApi\Model\ClientResponse> objects()
  */
-class ClientsEndpoint extends AbstractCollectionEndpoint
+class ClientsSegment extends AbstractCollectionSegment
 {
     /**
      * @param array $request {@see \Vgrish\YclientsOpenApi\Model\ClientGetListRequest::$openAPITypes}

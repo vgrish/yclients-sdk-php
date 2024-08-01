@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Vgrish\Yclients\Api\Query\Traits;
 
-use Vgrish\Yclients\Api\Query\Endpoints\AbstractCollectionEndpoint;
+use Vgrish\Yclients\Api\Query\Segments\AbstractCollectionSegment;
 
 trait ContentTrait
 {
@@ -19,7 +19,7 @@ trait ContentTrait
     {
         $array = $this->record()->toArray();
 
-        if (\is_a($this, AbstractCollectionEndpoint::class)) {
+        if (\is_a($this, AbstractCollectionSegment::class)) {
             return $array;
         }
 

@@ -11,8 +11,18 @@ declare(strict_types=1);
 
 namespace Vgrish\Yclients\Api\Query\Endpoints;
 
-use Vgrish\Yclients\Api\Query\Segments\AbstractSegment;
+use Vgrish\Yclients\Api\Query\AbstractBuilder;
+use Vgrish\Yclients\Api\Query\Traits\CallBackTrait;
+use Vgrish\Yclients\Api\Query\Traits\ContentTrait;
+use Vgrish\Yclients\Api\Query\Traits\DebugTrait;
+use Vgrish\Yclients\Api\Query\Traits\Params\ParamTrait;
+use Vgrish\Yclients\Api\Query\Traits\Segments\PathTrait;
 
-abstract class AbstractEndpoint extends AbstractSegment
+abstract class AbstractEndpoint extends AbstractBuilder
 {
+    use DebugTrait;
+    use CallBackTrait;
+    use ContentTrait;
+    use PathTrait;
+    use ParamTrait;
 }
