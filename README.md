@@ -123,8 +123,8 @@ $yc->query()
     ->param([
          'created_after'  => '2024-07-10',
          'created_before' => '2024-07-31',
-         'company_ids[]'  => '204265',
-         ['types[]', [5, 6]],
+         'company_ids'  => '204265',
+         ['types', [5, 6]],
     ])
     ->get([]);
 ```
