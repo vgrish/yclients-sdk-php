@@ -156,6 +156,7 @@ final class YclientsApiMethodInvoker
             }
 
             if (null !== $value) {
+                $value = $this->normalizeArgumentValue($name, $value);
                 $args[$name] = $value;
             }
         }
@@ -165,6 +166,70 @@ final class YclientsApiMethodInvoker
         }
 
         return $args;
+    }
+
+    private function normalizeArgumentValue(string $name, mixed $value): mixed
+    {
+        $spec = $this->getSpec($name);
+        $type = $spec['type'] ?? null;
+
+        switch (true) {
+            case 'string' === $type:
+                $value = (string) $value;
+
+                break;
+
+            case 'int' === $type:
+                $value = (int) $value;
+
+                break;
+
+            case 'float' === $type:
+                $value = (float) $value;
+
+                break;
+
+            case 'int[]' === $type:
+                if (\is_string($value) && $tmp = \json_decode($value, true)) {
+                    $value = $tmp;
+                }
+
+                $value = \is_array($value) ? $value : [$value];
+                $value = \array_map('intval', $value);
+
+                break;
+
+            case 'float[]' === $type:
+                if (\is_string($value) && $tmp = \json_decode($value, true)) {
+                    $value = $tmp;
+                }
+
+                $value = \is_array($value) ? $value : [$value];
+                $value = \array_map('floatval', $value);
+
+                break;
+
+            case 'string[]' === $type:
+                if (\is_string($value) && $tmp = \json_decode($value, true)) {
+                    $value = $tmp;
+                }
+
+                $value = \is_array($value) ? $value : [$value];
+                $value = \array_map('strval', $value);
+
+                break;
+
+            case \str_starts_with($type, '\\Vgrish\\YclientsOpenApi\\Model'):
+                $object = new $type($value);
+                $value = $object->toArray();
+
+                break;
+
+            default:
+                break;
+        }
+
+        return $value;
     }
 
     /**

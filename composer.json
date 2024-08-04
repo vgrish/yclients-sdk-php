@@ -25,7 +25,7 @@
     "php": ">=8.1",
     "ext-curl": "*",
     "ext-json": "*",
-    "vgrish/yclients-openapi-php": "1.0.0"
+    "vgrish/yclients-openapi-php": "1.0.1"
   },
   "require-dev": {
     "phpstan/phpstan": "^1.10",
