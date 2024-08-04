@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Vgrish\Yclients\Api\Query\Endpoints;
 
-use Vgrish\Yclients\Api\Query\Segments\Client\ClientsSegment;
+use Vgrish\Yclients\Api\Query\Segments\Client\ClientSegment;
 
-final class ClientEndpoint extends ClientsSegment
+final class ClientEndpoint extends ClientSegment
 {
 }
