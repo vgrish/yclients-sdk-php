@@ -37,7 +37,7 @@ final class QueryParams
 
     public static function setParam(
         array $params,
-        array|string $key,
+        array|int|string $key,
         null|array|bool|float|int|string $value = null,
     ): array {
         if (\is_array($key)) {
@@ -53,20 +53,29 @@ final class QueryParams
 
     private static function handleArrayOfParams(array $params, array $settableParams): array
     {
-        foreach ($settableParams as $k => $v) {
-            if (!\is_array($v) && !\is_numeric($k)) {
-                $params = self::setParam($params, $k, $v);
-            } else {
-                $params = self::setParam($params, ...$v);
+        if (!self::isAssociativeArray($settableParams)) {
+            foreach ($settableParams as $param) {
+                $params = self::setParam($params, ...$param);
+            }
+        } else {
+            foreach ($settableParams as $key => $param) {
+                if (\is_string($key)) {
+                    $params = self::set($params, $key, $param);
+                } else {
+                    $params = self::setParam($params, ...$param);
+                }
             }
         }
 
         return $params;
     }
 
-    private static function set(array $params, QueryParam|string $queryParam, array|bool|float|int|string $value): array
-    {
-        $queryParam = \is_string($queryParam) ? $queryParam : $queryParam->value;
+    private static function set(
+        array $params,
+        QueryParam|string $queryParam,
+        array|bool|float|int|string $value,
+    ): array {
+        $queryParam = \is_object($queryParam) ? $queryParam->value : $queryParam;
         $stringValue = Url::convertMixedValueToString($value);
 
         $separator = QueryParam::getSeparator($queryParam);
@@ -86,5 +95,14 @@ final class QueryParams
             $separator . $stringValue;
 
         return $params;
+    }
+
+    private static function isAssociativeArray(array $array): bool
+    {
+        if ([] === $array) {
+            return false;
+        }
+
+        return \array_keys($array) !== \range(0, \count($array) - 1);
     }
 }

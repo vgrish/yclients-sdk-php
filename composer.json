@@ -2,7 +2,7 @@
   "name": "vgrish/yclients-sdk-php",
   "type": "library",
   "license": "MIT",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "yclients-sdk-php package for YCLIENTS",
   "keywords": [
     "yclients",
