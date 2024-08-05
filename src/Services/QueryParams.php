@@ -37,7 +37,7 @@ final class QueryParams
 
     public static function setParam(
         array $params,
-        array|int|string $key,
+        array|string $key,
         null|array|bool|float|int|string $value = null,
     ): array {
         if (\is_array($key)) {
