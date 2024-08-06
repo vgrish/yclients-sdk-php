@@ -15,7 +15,7 @@ use Vgrish\Yclients\Api\Query\Segments\AbstractEntitySegment;
 use Vgrish\YclientsOpenApi\Api\LoyaltyCardApi;
 
 /**
- * @method \Vgrish\YclientsOpenApi\Model\LoyaltyTransactionResponse object()
+ * @method \Vgrish\YclientsOpenApi\Model\LoyaltyCardResponse object()
  */
 final class LoyaltyTransactionSegment extends AbstractEntitySegment
 {
